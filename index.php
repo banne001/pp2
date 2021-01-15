@@ -20,4 +20,6 @@ include ('functions.php');
     $numbers = array(7, 9, 8, 9, 8, 8, 6);
     printArr($numbers);
 
+    echo "largest numbers in the array is: " . largest($numbers);
+
 ?>
