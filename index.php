@@ -16,10 +16,17 @@ include ('functions.php');
 <?php
     echo "PHP Array Practice";
 
-    echo "<br>Second Task<br>";
+    echo "<br>Second Task: Print an Array<br>";
     $numbers = array(7, 9, 8, 9, 8, 8, 6);
     printArr($numbers);
 
-    echo "largest numbers in the array is: " . largest($numbers);
+    echo "<br>Fourth task: largest numbers in the array is: " . largest($numbers);
+
+    echo "<br><br>Fifth Task: Removed Duplicates<br>";
+    removeDups($numbers);
+
+    echo "<br>Sixth Task: Distribute the elements in the array to an associative array. Where the key 
+            is the number and the value is the number of times the number appears in the array<br>";
+    $dist = distribution($numbers);
 
 ?>
