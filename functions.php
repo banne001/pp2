@@ -1,46 +1,55 @@
 <?php
     /**
      * Print the elements that is given in the array
-     * @param array $arr The array to print the elements
+     * @param array $numbers The array to print the elements
      */
-    function printArr($arr){
-        for($i = 0; $i < sizeof($arr); $i++) {
-            echo "number: $arr[$i] <br>";
+    function printArr($numbers)
+    {
+        echo "<br>";
+        for($i = 0; $i < sizeof($numbers); $i++)
+        {
+            echo $numbers[$i];
+            echo "<br>";
         }
     }
 
     /**
      * Checks the largest number in the array
-     * @param array $arr The array of integers to check from
+     * @param array $numbers The array of integers to check from
      * @return int $max returns the largest number in the array
      */
-    function largest ($arr){
-        $max = $arr[0];
+    function largest($numbers)
+    {
+        $max = $numbers[0];
 
-        for($i = 0; $i < sizeof($arr); $i++){
-            if($arr[$i] > $max){
-                $max = $arr[$i];
+        for($i = 1; $i < sizeof($numbers); $i++)
+        {
+            if($numbers[$i] > $max)
+            {
+                $max = $numbers[$i];
             }
         }
+
         return $max;
     }
     /**
      * Removes duplicates
      * Creates an array. Loops through the given array and checks
      * adds any element that is not contained in the created array
-     * @param array $arr The array of integers to remove duplicates from
+     * @param array $numbers The array of integers to remove duplicates from
      * @return array $result returns the array without any duplicates
      */
-    function removeDups($arr){
-        $result = [];
-        for($i = 0; $i < sizeof($arr); $i++){
-            if(!in_array($arr[$i], $result)){
-                array_push($result, $arr[$i]);
+    function removeDups($numbers)
+    {
+        $result = array();
+
+        for($i = 0; $i < sizeof($numbers); $i++) {
+            if (!in_array($numbers[$i], $result)) {
+                $result[] = $numbers[$i];
             }
         }
         printArr($result);
         return $result;
-
     }
 
     /**
@@ -59,6 +68,7 @@
                 $result[$arr[$i]] = $result[$arr[$i]]+1;
             }
         }
+        // sort the array
         ksort($result, 1);
         foreach ($result as $number => $dups){
             echo "<br> $number => $dups";
