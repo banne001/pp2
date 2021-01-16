@@ -1,7 +1,7 @@
 <?php
     /**
      * Print the elements that is given in the array
-     * @param Array $arr The array to print the elements
+     * @param array $arr The array to print the elements
      */
     function printArr($arr){
         for($i = 0; $i < sizeof($arr); $i++) {
@@ -11,8 +11,8 @@
 
     /**
      * Checks the largest number in the array
-     * @param Array $arr The array of integers to check from
-     * @return integer $max returns the largest number in the array
+     * @param array $arr The array of integers to check from
+     * @return int $max returns the largest number in the array
      */
     function largest ($arr){
         $max = $arr[0];
@@ -28,8 +28,8 @@
      * Removes duplicates
      * Creates an array. Loops through the given array and checks
      * adds any element that is not contained in the created array
-     * @param Array $arr The array of integers to remove duplicates from
-     * @return Array $result returns the array without any duplicates
+     * @param array $arr The array of integers to remove duplicates from
+     * @return array $result returns the array without any duplicates
      */
     function removeDups($arr){
         $result = [];
@@ -43,6 +43,13 @@
 
     }
 
+    /**
+     * Distribute the elements in the array to an associative array. Where the key is the number
+     * and the value is the number of times the number appears in the array
+     * @param array $arr Array to distribute elements from
+     * @return array $result An associative array. key is the number and value is the number
+     *          of occurrences in the array
+     */
     function distribution($arr){
         $result[$arr[0]] = 1;
         for($i = 1; $i < sizeof($arr); $i++){
